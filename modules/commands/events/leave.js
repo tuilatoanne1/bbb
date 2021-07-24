@@ -1,4 +1,4 @@
-﻿module.exports.config = {
+module.exports.config = {
 	name: "leave",
 	eventType: ["log:unsubscribe"],
 	version: "1.0.0",
@@ -19,7 +19,7 @@ module.exports.run = async function({ api, event, Users, Threads, client }) {
 	.replace(/\{type}/g, type);
 	let dirGif = __dirname + `/cache/leaveGif/`;
 	if (existsSync(dirGif)) mkdirSync(dirGif, { recursive: true })
-	if (existsSync(dirGif + `bye.gif`)) formPush = { body: msg, attachment: createReadStream(dirGif + `bye.gif`) }
+	if (existsSync(dirGif + `bye.mp4`)) formPush = { body: msg, attachment: createReadStream(dirGif + `bye.mp4`) }
 	else formPush = { body: msg }
 	return api.sendMessage(formPush, event.threadID);
 }
