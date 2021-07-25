@@ -36,7 +36,7 @@ module.exports.run = async function({ api, event, global, client }) {
 		.replace(/\{soThanhVien}/g, memLength.join(', '))
 		.replace(/\{threadName}/g, threadName);
 		if (existsSync(dirGif)) mkdirSync(dirGif, { recursive: true });
-		if (existsSync(dirGif + `chào.mp4`)) formPush = { body: msg, attachment: createReadStream(dirGif + `chào.mp4`), mentions }
+		if (existsSync(dirGif + `video.mp4`)) formPush = { body: msg, attachment: createReadStream(dirGif + `video.mp4`), mentions }
 		else formPush = { body: msg, mentions }
 		return api.sendMessage(formPush, event.threadID);
 	}
